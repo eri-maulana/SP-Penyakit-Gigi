@@ -1,5 +1,6 @@
 <?php
-
+// koneksi database
+include 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,19 +12,23 @@
 
     <!-- bootstrap css -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- datatable css -->
+    <link rel="stylesheet" href="assets/css/datatables.min.css">
+    <!-- fontawesome css -->
+     <link rel="stylesheet" href="assets/css/all.css">
 </head>
 
 <body>
 
     <!-- navbar -->
     <!-- Grey with black text -->
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
         <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link" href="/">Beranda</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Gejala</a>
+                <a class="nav-link" href="?page=gejala">Gejala</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Penyakit</a>
@@ -50,15 +55,15 @@
 
         if ($page == "") {
             include "welcome.php";
-        } elseif ($page == "NAMA_PAGE") {
+        } elseif ($page == "gejala") {
             if ($action == "") {
-                include "NAMA_HALAMAN";
-            } elseif ($action == "NAMA_ACTION") {
-                include "NAMA_HALAMAN";
-            } elseif ($action == "NAMA_ACTION") {
-                include "NAMA_HALAMAN";
+                include "views/gejala/gejala.php";
+            } elseif ($action == "tambah") {
+                include "views/gejala/tambah_gejala.php";
+            } elseif ($action == "update") {
+                include "views/gejala/update_gejala.php";
             } else {
-                include "NAMA_HALAMAN";
+                include "views/gejala/hapus_gejala.php";
             }
         } else {
             include "NAMA_HALAMAN";
@@ -70,9 +75,17 @@
 
     <!-- jquery -->
     <script src="assets/js/jquery-3.7.0.min.js"></script>
+    <!-- datatable js-->
     <script src="assets/js/jquery.dataTables.min.js"></script>
+    <!-- fontawesome js-->
+    <script src="assets/js/all.js"></script>
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+    </script>
 </body>
 
 </html>
