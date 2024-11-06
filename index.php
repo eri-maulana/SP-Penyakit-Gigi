@@ -31,7 +31,7 @@ include 'config.php';
                 <a class="nav-link" href="?page=gejala">Gejala</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Penyakit</a>
+                <a class="nav-link" href="?page=penyakit">Penyakit</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Basis Aturan</a>
@@ -64,6 +64,16 @@ include 'config.php';
                 include "views/gejala/update_gejala.php";
             } else {
                 include "views/gejala/hapus_gejala.php";
+            }
+        } elseif ($page == "penyakit") {
+            if ($action == "") {
+                include "views/penyakit/penyakit.php";
+            } elseif ($action == "tambah") {
+                include "views/penyakit/tambah_penyakit.php";
+            } elseif ($action == "update") {
+                include "views/penyakit/update_penyakit.php";
+            } else {
+                include "views/penyakit/hapus_penyakit.php";
             }
         } else {
             include "NAMA_HALAMAN";
