@@ -13,13 +13,14 @@
         // proses tambah data
         if (isset($_POST['simpan'])) {
             // mengambil data dari form
+            $kode_penyakit = $_POST['kode_penyakit'];
             $nmpenyakit = $_POST['nmpenyakit'];
             $keterangan = $_POST['keterangan'];
             $solusi = $_POST['solusi'];
 
             
                 //proses simpan
-                $sql = "INSERT INTO penyakit VALUES (null,'$nmpenyakit','$keterangan','$solusi')";
+                $sql = "INSERT INTO penyakit VALUES (null,'$kode_penyakit','$nmpenyakit','$keterangan','$solusi')";
                 if ($koneksi->query($sql) === TRUE) {
                     header("Location:?page=penyakit");
                 }
@@ -36,16 +37,20 @@
                             <div class="card-header bg-success text-white border-light"><strong>Tambah Data Penyakit</strong></div>
                             <div class="card-body">
                                 <div class="form-group">
+                                    <label for="kode_penyakit">Kode</label>
+                                    <input id="kode_penyakit" type="text" class="form-control" name="kode_penyakit" maxlength="3" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="nmpenyakit">Nama Penyakit</label>
                                     <input id="nmpenyakit" type="text" class="form-control" name="nmpenyakit" maxlength="200" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="keterangan">Keterangan</label>
-                                    <input id="keterangan" type="text" class="form-control" name="keterangan" maxlength="1000" required>
+                                    <input id="keterangan" type="text" class="form-control" name="keterangan" maxlength="1000" >
                                 </div>
                                 <div class="form-group">
                                     <label for="solusi">Solusi</label>
-                                    <input id="solusi" type="text" class="form-control" name="solusi" maxlength="500" required>
+                                    <input id="solusi" type="text" class="form-control" name="solusi" maxlength="500" >
                                 </div>
 
                                 <input class="btn btn-success" type="submit" name="simpan" value="Simpan">

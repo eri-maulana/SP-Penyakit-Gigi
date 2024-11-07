@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gejala</title>
+    <title>Data Gejala</title>
 </head>
 
 <body>
@@ -15,20 +15,22 @@
             <table class="table table-bordered" id="myTable">
                 <thead>
                     <tr>
-                        <th width="30px">No. </th>
-                        <th width="500px">Nama Gejala</th>
+                        <th width="30px" class="text-center">No.</th>
+                        <th width="100px" class="text-center">Kode</th>
+                        <th width="400px">Nama Gejala</th>
                         <th width="100px" class="text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $no = 1;
-                    $sql = "SELECT*FROM gejala ORDER BY nmgejala ASC";
+                    $sql = "SELECT*FROM gejala ORDER BY kode_gejala ASC";
                     $result = $koneksi->query($sql);
                     while ($row = $result->fetch_assoc()) {
                     ?>
                         <tr>
-                            <td><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo $row['kode_gejala']; ?></td>
                             <td><?php echo $row['nmgejala']; ?></td>
                             <td class="text-center">
                                 <a class="btn btn-warning btn-sm" href="?page=gejala&action=update&id=<?php echo $row['idgejala']; ?>">

@@ -14,8 +14,10 @@ include 'config.php';
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- datatable css -->
     <link rel="stylesheet" href="assets/css/datatables.min.css">
+    <!-- chosen css -->
+    <link rel="stylesheet" href="assets/css/bootstrap-chosen.css">
     <!-- fontawesome css -->
-     <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/all.css">
 </head>
 
 <body>
@@ -34,7 +36,7 @@ include 'config.php';
                 <a class="nav-link" href="?page=penyakit">Penyakit</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Basis Aturan</a>
+                <a class="nav-link" href="?page=basis_aturan">Basis Aturan</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Konsultasi</a>
@@ -75,6 +77,20 @@ include 'config.php';
             } else {
                 include "views/penyakit/hapus_penyakit.php";
             }
+        } elseif ($page == "basis_aturan") {
+            if ($action == "") {
+                include "views/basis_aturan/basis_aturan.php";
+            } elseif ($action == "tambah") {
+                include "views/basis_aturan/tambah_basis_aturan.php";
+            } elseif ($action == "detail") {
+                include "views/basis_aturan/detail_basis_aturan.php";
+            } elseif ($action == "update") {
+                include "views/basis_aturan/update_basis_aturan.php";
+            } elseif ($action == "hapus_gejala") {
+                include "views/basis_aturan/hapus_detail_basis_aturan.php";
+            } else {
+                include "views/basis_aturan/hapus_basis_aturan.php";
+            }
         } else {
             include "NAMA_HALAMAN";
         }
@@ -85,15 +101,22 @@ include 'config.php';
 
     <!-- jquery -->
     <script src="assets/js/jquery-3.7.0.min.js"></script>
-    <!-- datatable js-->
-    <script src="assets/js/jquery.dataTables.min.js"></script>
     <!-- fontawesome js-->
     <script src="assets/js/all.js"></script>
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.min.js"></script>
+    <!-- datatable js-->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#myTable').DataTable();
+        });
+    </script>
+    <!-- chosen js-->
+    <script src="assets/js/chosen.jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('.chosen').chosen();
         });
     </script>
 </body>

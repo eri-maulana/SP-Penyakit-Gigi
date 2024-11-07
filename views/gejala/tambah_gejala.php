@@ -14,10 +14,11 @@
         if (isset($_POST['simpan'])) {
             // mengambil data dari form
             $nmgejala = $_POST['nmgejala'];
+            $kode_gejala = $_POST['kode_gejala'];
 
             
                 //proses simpan
-                $sql = "INSERT INTO gejala VALUES (null,'$nmgejala')";
+                $sql = "INSERT INTO gejala VALUES (null,'$kode_gejala','$nmgejala')";
                 if ($koneksi->query($sql) === TRUE) {
                     header("Location:?page=gejala");
                 }
@@ -33,6 +34,10 @@
                         <div class="card">
                             <div class="card-header bg-success text-white border-light"><strong>Tambah Data Gejala</strong></div>
                             <div class="card-body">
+                                <div class="form-group">
+                                    <label for="kode_gejala">Kode</label>
+                                    <input id="kode_gejala" type="text" class="form-control" name="kode_gejala" maxlength="3" required>
+                                </div>
                                 <div class="form-group">
                                     <label for="nmgejala">Nama Gejala</label>
                                     <input id="nmgejala" type="text" class="form-control" name="nmgejala" maxlength="200" required>
