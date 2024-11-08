@@ -39,7 +39,7 @@ include 'config.php';
                 <a class="nav-link" href="?page=basis_aturan">Basis Aturan</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Konsultasi</a>
+                <a class="nav-link" href="?page=konsultasi">Konsultasi</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Logout</a>
@@ -90,6 +90,12 @@ include 'config.php';
                 include "views/basis_aturan/hapus_detail_basis_aturan.php";
             } else {
                 include "views/basis_aturan/hapus_basis_aturan.php";
+            }
+        } elseif ($page == "konsultasi") {
+            if ($action == "") {
+                include "views/konsultasi/konsultasi.php";
+            } else {
+                include "views/konsultasi/hasil_konsultasi.php";
             }
         } else {
             include "NAMA_HALAMAN";
