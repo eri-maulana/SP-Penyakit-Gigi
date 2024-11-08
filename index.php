@@ -30,6 +30,9 @@ include 'config.php';
                 <a class="nav-link" href="/">Beranda</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="?page=users">Pengguna</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="?page=gejala">Gejala</a>
             </li>
             <li class="nav-item">
@@ -96,6 +99,16 @@ include 'config.php';
                 include "views/konsultasi/konsultasi.php";
             } else {
                 include "views/konsultasi/hasil_konsultasi.php";
+            }
+        } elseif ($page == "users") {
+            if ($action == "") {
+                include "views/users/users.php";
+            } elseif ($action == "tambah") {
+                include "views/users/tambah_users.php";
+            }  elseif ($action == "update") {
+                include "views/users/update_users.php";
+            }  else {
+                include "views/users/hapus_users.php";
             }
         } else {
             include "NAMA_HALAMAN";
