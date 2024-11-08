@@ -14,7 +14,7 @@
         if (isset($_POST['simpan'])) {
             // mengambil data dari form
             $username = $_POST['username'];
-            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $password = md5($_POST['password']);
             $role = $_POST['role'];
 
 
@@ -52,9 +52,10 @@
                                         <option value="Pasien">Pasien</option>
                                     </select>
                                 </div>
-
-                                <input class="btn btn-success" type="submit" name="simpan" value="Simpan">
-                                <a class="btn btn-secondary" href="?page=users">Batal</a>
+                                <div class="text-center">
+                                    <input class="btn btn-success" type="submit" name="simpan" value="Simpan">
+                                    <a class="btn btn-secondary" href="?page=users">Batal</a>
+                                </div>
 
                             </div>
                         </div>

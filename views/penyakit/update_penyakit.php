@@ -51,15 +51,16 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="keterangan">Keterangan</label>
-                                    <input id="keterangan" type="text" class="form-control" name="keterangan" maxlength="1000" value="<?= $row['keterangan'] ?>" >
+                                    <input id="keterangan" type="text" class="form-control" name="keterangan" maxlength="1000" value="<?= $row['keterangan'] ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="solusi">Solusi</label>
-                                    <input id="solusi" type="text" class="form-control" name="solusi" maxlength="500" value="<?= $row['solusi'] ?>" >
+                                    <input id="solusi" type="text" class="form-control" name="solusi" maxlength="500" value="<?= $row['solusi'] ?>">
                                 </div>
-
-                                <input class="btn btn-success" type="submit" name="update" value="Update">
-                                <a class="btn btn-secondary" href="?page=penyakit">Batal</a>
+                                <div class="text-center">
+                                    <input class="btn btn-success" type="submit" name="update" value="Update">
+                                    <a class="btn btn-secondary" href="?page=penyakit">Batal</a>
+                                </div>
 
                             </div>
                         </div>

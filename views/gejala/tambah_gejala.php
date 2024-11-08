@@ -16,14 +16,14 @@
             $nmgejala = $_POST['nmgejala'];
             $kode_gejala = $_POST['kode_gejala'];
 
-            
-                //proses simpan
-                $sql = "INSERT INTO gejala VALUES (null,'$kode_gejala','$nmgejala')";
-                if ($koneksi->query($sql) === TRUE) {
-                    header("Location:?page=gejala");
-                }
+
+            //proses simpan
+            $sql = "INSERT INTO gejala VALUES (null,'$kode_gejala','$nmgejala')";
+            if ($koneksi->query($sql) === TRUE) {
+                header("Location:?page=gejala");
             }
-        
+        }
+
         ?>
         <!-- proses tambah data end -->
 
@@ -42,9 +42,10 @@
                                     <label for="nmgejala">Nama Gejala</label>
                                     <input id="nmgejala" type="text" class="form-control" name="nmgejala" maxlength="200" required>
                                 </div>
-
-                                <input class="btn btn-success" type="submit" name="simpan" value="Simpan">
-                                <a class="btn btn-secondary" href="?page=gejala">Batal</a>
+                                <div class="text-center">
+                                    <input class="btn btn-success" type="submit" name="simpan" value="Simpan">
+                                    <a class="btn btn-secondary" href="?page=gejala">Batal</a>
+                                </div>
 
                             </div>
                         </div>

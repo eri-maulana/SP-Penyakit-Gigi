@@ -16,7 +16,7 @@
         //proses update data 
         if (isset($_POST['update'])) {
             $username = $_POST['username'];
-            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $password = md5($_POST['password']);
             $role = $_POST['role'];
 
             $sql = "UPDATE users SET username='$username', password='$password', role='$role' WHERE idusers='$idusers'";
@@ -58,9 +58,10 @@
                                         <option value="Pasien">Pasien</option>
                                     </select>
                                 </div>
-
-                                <input class="btn btn-success" type="submit" name="update" value="Update">
-                                <a class="btn btn-secondary" href="?page=penyakit">Batal</a>
+                                <div class="text-center">
+                                    <input class="btn btn-success" type="submit" name="update" value="Update">
+                                    <a class="btn btn-secondary" href="?page=users">Batal</a>
+                                </div>
 
                             </div>
                         </div>

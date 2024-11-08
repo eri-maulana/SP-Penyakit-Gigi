@@ -15,10 +15,10 @@
             <table class="table table-bordered" id="myTable">
                 <thead>
                     <tr>
-                        <th width="30px">No.</th>
+                        <th width="30px" class="text-center">No.</th>
                         <th width="150px">Username</th>
                         <th width="200px">Password</th>
-                        <th width="300px">Role</th>
+                        <th width="300px" class="text-center">Role</th>
                         <th width="100px" class="text-center">Aksi</th>
                     </tr>
                 </thead>
@@ -30,10 +30,10 @@
                     while ($row = $result->fetch_assoc()) {
                     ?>
                         <tr>
-                            <td><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo $no++; ?></td>
                             <td><?php echo $row['username']; ?></td>
                             <td><?php echo $row['password']; ?></td>
-                            <td><?php echo $row['role']; ?></td>
+                            <td class="text-center"><?php echo $row['role']; ?></td>
                             <td class="text-center ">
                                 <a class="btn btn-warning btn-sm " href="?page=users&action=update&id=<?php echo $row['idusers']; ?>">
                                     <i class="fas fa-edit"></i>

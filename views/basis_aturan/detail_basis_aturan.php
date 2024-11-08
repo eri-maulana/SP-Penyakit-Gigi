@@ -29,7 +29,7 @@ $row = $result->fetch_assoc();
                         <div class="card-body">
 
                             <div class="form-group">
-                                <label for="">Kode Penyakit</label>
+                                <label for="" >Kode Penyakit</label>
                                 <input type="text" class="form-control" value="<?php echo $row['kode_penyakit'] ?>" name="" readonly>
                             </div>
                             <div class="form-group">
@@ -45,7 +45,7 @@ $row = $result->fetch_assoc();
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th width="30px">Kode Gejala</th>
+                                        <th width="30px" class="text-center">Kode Gejala</th>
                                         <th width="500px">Nama Gejala</th>
                                     </tr>
                                 </thead>
@@ -57,7 +57,7 @@ $row = $result->fetch_assoc();
                                     while ($row = $result->fetch_assoc()) {
                                     ?>
                                     <tr>
-                                        <td><?php echo $row['kode_gejala']; ?></td>
+                                        <td class="text-center"><?php echo $row['kode_gejala']; ?></td>
                                         <td><?php echo $row['nmgejala']; ?></td>
                                     </tr>
                                     <?php
@@ -69,7 +69,7 @@ $row = $result->fetch_assoc();
                             
 
                             <div class="text-center">
-                                <a class="btn btn-success " href="?page=basis_aturan">Kembali</a>
+                                <a class="btn btn-secondary " href="?page=basis_aturan">Kembali</a>
                             </div>
 
                         </div>

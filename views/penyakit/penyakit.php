@@ -15,8 +15,8 @@
             <table class="table table-bordered" id="myTable">
                 <thead>
                     <tr>
-                        <th width="30px">No. </th>
-                        <th width="50px">Kode</th>
+                        <th width="30px" class="text-center">No. </th>
+                        <th width="50px" class="text-center">Kode</th>
                         <th width="150px">Nama Penyakit</th>
                         <th width="200px">Keterangan</th>
                         <th width="300px">Solusi</th>
@@ -31,8 +31,8 @@
                     while ($row = $result->fetch_assoc()) {
                     ?>
                         <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td><?php echo $row['kode_penyakit']; ?></td>
+                            <td class="text-center"><?php echo $no++; ?></td>
+                            <td class="text-center"><?php echo $row['kode_penyakit']; ?></td>
                             <td><?php echo $row['nmpenyakit']; ?></td>
                             <td><?php echo $row['keterangan']; ?></td>
                             <td><?php echo $row['solusi']; ?></td>

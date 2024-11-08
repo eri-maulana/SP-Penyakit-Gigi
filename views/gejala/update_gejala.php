@@ -50,9 +50,10 @@
                                     <label for="nmgejala">Nama Gejala</label>
                                     <input id="nmgejala" type="text" class="form-control" name="nmgejala" maxlength="200" value="<?= $row['nmgejala'] ?>" required>
                                 </div>
-
-                                <input class="btn btn-success" type="submit" name="update" value="Update">
-                                <a class="btn btn-secondary" href="?page=gejala">Batal</a>
+                                <div class="text-center">
+                                    <input class="btn btn-success" type="submit" name="update" value="Update">
+                                    <a class="btn btn-secondary" href="?page=gejala">Batal</a>
+                                </div>
 
                             </div>
                         </div>

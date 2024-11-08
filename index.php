@@ -1,6 +1,12 @@
 <?php
+session_start();
+
 // koneksi database
 include 'config.php';
+
+// Mendapatkan path URL saat ini
+$page = $_SERVER['REQUEST_URI'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,42 +30,78 @@ include 'config.php';
 
     <!-- navbar -->
     <!-- Grey with black text -->
-    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Beranda</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="?page=users">Pengguna</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="?page=gejala">Gejala</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="?page=penyakit">Penyakit</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="?page=basis_aturan">Basis Aturan</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="?page=konsultasi">Konsultasi</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg bg-success fixed-top navbar-dark mb-5">
+        <a class="navbar-brand ml-2" href="/">GIGI SEHAT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-5" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link <?= $page == '/' ? 'active' : '' ?>" href="/">Beranda</a>
+                </li>
+                <!-- setting hak akses -->
+                <?php
+                if ($_SESSION['role'] == "Dokter") {
+                ?>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $page == '/?page=users' ? 'active' : '' ?>" href="?page=users">Pengguna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $page == '/?page=gejala' ? 'active' : '' ?>" href="?page=gejala">Gejala</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $page == '/?page=penyakit' ? 'active' : '' ?>" href="?page=penyakit">Penyakit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $page == '/?page=basis_aturan' ? 'active' : '' ?>" href="?page=basis_aturan">Basis Aturan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $page == '/?page=riwayat_konsultasi' ? 'active' : '' ?>" href="?page=riwayat_konsultasi">Riwayat Konsultasi</a>
+                    </li>
+                <?php
+                } elseif ($_SESSION['role'] == "Petugas") {
+                ?>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $page == '/?page=konsultasi' ? 'active' : '' ?>" href="?page=konsultasi">Konsultasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $page == '/?page=riwayat_konsultasi' ? 'active' : '' ?>" href="?page=riwayat_konsultasi">Riwayat Konsultasi</a>
+                    </li>
+                <?php
+                } else {
+                ?>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $page == '/?page=konsultasi' ? 'active' : '' ?>" href="?page=konsultasi">Konsultasi</a>
+                    </li>
+                <?php
+                }
+                ?>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="?page=logout">Logout</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <!-- navbar end -->
 
     <!-- content -->
-    <div class="container mt-5">
-
+    <div class="container mt-5 pt-5">
+        <?php
+        // cek status login
+        if ($_SESSION['status'] != "y") {
+            header("Location:views/auth/login.php");
+        }
+        ?>
+        <!-- setting menu -->
         <?php
         $page = isset($_GET['page']) ? $_GET['page'] : "";
         $action = isset($_GET['action']) ? $_GET['action'] : "";
 
         if ($page == "") {
-            include "welcome.php";
+            include "beranda.php";
         } elseif ($page == "gejala") {
             if ($action == "") {
                 include "views/gejala/gejala.php";
@@ -105,13 +147,19 @@ include 'config.php';
                 include "views/users/users.php";
             } elseif ($action == "tambah") {
                 include "views/users/tambah_users.php";
-            }  elseif ($action == "update") {
+            } elseif ($action == "update") {
                 include "views/users/update_users.php";
-            }  else {
+            } else {
                 include "views/users/hapus_users.php";
             }
+        } elseif ($page == "riwayat_konsultasi") {
+            if ($action == "") {
+                include "views/konsultasi/riwayat_konsultasi.php";
+            } else {
+                include "views/konsultasi/detail_riwayat_konsultasi.php";
+            }
         } else {
-            include "NAMA_HALAMAN";
+            include "views/auth/logout.php";
         }
         ?>
 

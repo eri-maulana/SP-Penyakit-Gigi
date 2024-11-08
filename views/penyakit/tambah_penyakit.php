@@ -52,9 +52,10 @@
                                     <label for="solusi">Solusi</label>
                                     <input id="solusi" type="text" class="form-control" name="solusi" maxlength="500" >
                                 </div>
-
-                                <input class="btn btn-success" type="submit" name="simpan" value="Simpan">
-                                <a class="btn btn-secondary" href="?page=penyakit">Batal</a>
+                                <div class="text-center">
+                                    <input class="btn btn-success" type="submit" name="simpan" value="Simpan">
+                                    <a class="btn btn-secondary" href="?page=penyakit">Batal</a>
+                                </div>
 
                             </div>
                         </div>

@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="card">
+    <div class="card mb-5">
         <div class="card-header bg-success text-white border-dark"><strong>Data Gejala</strong></div>
         <div class="card-body">
             <a class="btn btn-success mb-2" href="?page=gejala&action=tambah">Tambah</a>

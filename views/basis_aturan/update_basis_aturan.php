@@ -113,9 +113,10 @@ if (isset($_POST['update'])) {
                                     </tbody>
                                 </table>
                             </div>
-
-                            <input class="btn btn-success" type="submit" name="update" value="Update">
-                            <a class="btn btn-secondary" href="?page=basis_aturan">Batal</a>
+                            <div class="text-center">
+                                <input class="btn btn-success" type="submit" name="update" value="Update">
+                                <a class="btn btn-secondary" href="?page=basis_aturan">Batal</a>
+                            </div>
 
                         </div>
                     </div>

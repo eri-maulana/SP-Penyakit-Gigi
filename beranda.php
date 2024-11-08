@@ -9,7 +9,7 @@
     <div class="text-center">
         <h1 class="">Selamat Datang</h1>
         <h3>Sistem Pakar Penyakit Gigi Metode Forward Chaining</h3>
-        <h3>Klik Gigi Sehat</h3>
+        <h3>Klinik Gigi Sehat</h3>
     </div>
 </body>
 </html>
