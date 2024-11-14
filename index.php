@@ -57,12 +57,6 @@ $page = $_SERVER['REQUEST_URI'];
                         <a class="nav-link <?= $page == '/?page=basis_aturan' ? 'active' : '' ?>" href="?page=basis_aturan">Basis Aturan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= $page == '/?page=riwayat_konsultasi' ? 'active' : '' ?>" href="?page=riwayat_konsultasi">Riwayat Konsultasi</a>
-                    </li>
-                <?php
-                } elseif ($_SESSION['role'] == "Petugas") {
-                ?>
-                    <li class="nav-item">
                         <a class="nav-link <?= $page == '/?page=konsultasi' ? 'active' : '' ?>" href="?page=konsultasi">Konsultasi</a>
                     </li>
                     <li class="nav-item">
@@ -73,6 +67,9 @@ $page = $_SERVER['REQUEST_URI'];
                 ?>
                     <li class="nav-item">
                         <a class="nav-link <?= $page == '/?page=konsultasi' ? 'active' : '' ?>" href="?page=konsultasi">Konsultasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $page == '/?page=riwayat_konsultasi' ? 'active' : '' ?>" href="?page=riwayat_konsultasi">Riwayat Konsultasi</a>
                     </li>
                 <?php
                 }

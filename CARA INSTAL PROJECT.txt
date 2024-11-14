@@ -1,0 +1,19 @@
+CARA INSTAL PROJECT
+
+1. unduh file zip na
+2. ekstrak kana folder htdocs di xampp
+3. jieun database na make ngaran sp_penyakit_gigi
+4. import database na , ayaa dina folder sp_penyakit_gigi -> assets -> db -> sp_penyakit_gigi.sql
+5. jalankeun apache jng mysql di xampp na 
+6. buka localhost/sp_penyakit_gigi
+7. login make akun anu aya dina table users di database , password na sarua jng username na
+	contoh :
+		username = dokter
+		password = dokter
+
+lamun teu support karena versi php di xampp na teu sarua ? 
+INSTAL LARAGON VERSI TERBARU!! HAYOH WE MAKE XAMPP PUGUH GE ERROR WAE!!
+
+
+
+
