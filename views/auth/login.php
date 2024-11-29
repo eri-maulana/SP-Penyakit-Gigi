@@ -63,11 +63,11 @@ if(isset($_GET['msg'])){
                     <div class="card-body border">
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" name="username" autocomplete="off" id="username" required>
+                            <input type="text" value="pasien" class="form-control" name="username" autocomplete="off" id="username" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" name="password" autocomplete="off" id="password" required>
+                            <input type="password" value="pasien" class="form-control" name="password" autocomplete="off" id="password" required>
                         </div>
                         <div class="text-center">
                             <input type="submit" class="btn btn-success btn-lg rounded" name="submit" value="Login">

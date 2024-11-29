@@ -38,7 +38,7 @@ $row = $result->fetch_assoc();
                             </div>
                             <div class="form-group">
                                 <label for="">Keterangan</label>
-                                <input type="text" class="form-control" value="<?php echo $row['keterangan'] ?>" name="" readonly>
+                                <textarea name="" id=""  class="form-control" readonly><?php echo $row['keterangan'] ?></textarea>
                             </div>
                             
                             <label for="Gejala"></label>

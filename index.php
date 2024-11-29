@@ -152,6 +152,8 @@ $page = $_SERVER['REQUEST_URI'];
         } elseif ($page == "riwayat_konsultasi") {
             if ($action == "") {
                 include "views/konsultasi/riwayat_konsultasi.php";
+            } elseif($action == "hapus"){
+                include "views/konsultasi/hapus_riwayat_konsultasi.php";
             } else {
                 include "views/konsultasi/detail_riwayat_konsultasi.php";
             }

@@ -38,6 +38,12 @@
                                     <i class="fas fa-list"></i>
                                 </a>
                                 <!-- tombol detail end -->
+
+                                <!-- tombol hapus riwayat konsultasi -->
+                                <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger btn-sm" href="?page=riwayat_konsultasi&action=hapus&id=<?php echo $row['idkonsultasi']; ?>">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                                <!-- tombol hapus riwayat konsultasi end -->
                             </td>
                         </tr>
                     <?php
